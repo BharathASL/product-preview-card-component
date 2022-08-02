@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,500;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:ital,wght@0,500;0,700;1,500;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:ital,wght@0,500;0,700;1,500;1,700&display=swap");
 
 body {
     background-color: hsl(30, 38%, 92%);
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 13px;
     display: flex;
     align-items: center;
@@ -14,7 +14,7 @@ body {
 
 .subtitle,
 .main {
-    color: hsl(228, 12%, 48%);
+    color: rgb(108 114 137 / 98%);
 }
 
 .subtitle {
@@ -28,11 +28,11 @@ body {
 }
 
 .h1 {
-    font-family: 'Fraunces', serif;
+    font-family: "Fraunces", serif;
     font-weight: 700;
     font-size: 2.5em;
     color: hsl(212, 21%, 14%);
-    margin: .6em 0;
+    margin: 0.6em 0;
     line-height: 1em;
 }
 
@@ -41,9 +41,12 @@ body {
 }
 
 .img-view {
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
     width: 300px;
+    img {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        width: 100%;
+    }
 }
 
 .content {
@@ -51,10 +54,11 @@ body {
     height: inherit;
     padding: 2.5em;
     width: calc(300px - 2.5em * 2);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 
     display: flex;
     flex-direction: column;
-
 }
 
 .price {
@@ -62,14 +66,14 @@ body {
     align-content: flex-start;
     align-items: center;
 
-    >* {
+    > * {
         flex-grow: 1;
     }
 
     .discount {
         color: hsl(158, 36%, 37%);
         font-size: 2.5em;
-        font-family: 'Fraunces', serif;
+        font-family: "Fraunces", serif;
         font-weight: 700;
     }
 
@@ -90,8 +94,50 @@ button {
     border: none;
     cursor: pointer;
 
+    transition: all 1s ease;
+
     img {
         margin-bottom: -2px;
         height: 1.2em;
+    }
+
+    &:hover {
+        background: hsl(156deg 42% 18%);
+    }
+}
+
+// Mobile device changes
+
+@media only screen and (max-width: 375px) {
+    .wrapper {
+        flex-direction: column;
+    }
+    .img-view {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        height: 232px;
+        overflow: hidden;
+        img {
+            margin-top: -110px;
+            width: 100%;
+        }
+    }
+
+    .content {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+    }
+
+    .main {
+        line-height: 1.5em;
+        font-size: 1.1em;
+    }
+
+    .h1 {
+        font-size: 2em;
+        margin: 0.5em 0;
     }
 }

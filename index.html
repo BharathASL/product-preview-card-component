@@ -16,7 +16,9 @@
 <body>
 
   <div class="wrapper">
-    <img src="images/image-product-desktop.jpg" class="img-view">
+    <div class="img-view">
+      <img src="images/image-product-desktop.jpg">
+    </div>
     <div class="content">
       <div class="subtitle">PERFUME</div>
       <div class="h1">Gabrielle Essence Eau De Parfum</div>
@@ -57,6 +59,12 @@
 
     .attribution a {
       color: hsl(228, 45%, 44%);
+      transition: all .5s ease;
+    }
+
+    .attribution a:hover {
+      color: hsl(346, 45%, 44%);
+      font-size: 18px;
     }
   </style>
 </body>
